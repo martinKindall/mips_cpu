@@ -2,7 +2,7 @@
 
 module SevenSegmentTop(
         input logic clk,
-        input logic [4:0] btns,
+        input logic [15:0] displayed_number,
         output logic [6:0] led_segment,
         output logic [3:0] anode_activate,
         output logic dp);
@@ -12,7 +12,7 @@ module SevenSegmentTop(
     
     SevenSegmentCtrl sevenSegmentCtrl(
         .clk(clk),
-        .displayed_number({11'b00000000000, btns}),
+        .displayed_number(displayed_number),
         .anode_activate(anode_activate),
         .led_binary(led_binary)
     );

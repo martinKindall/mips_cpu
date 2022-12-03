@@ -22,7 +22,7 @@ module SevenSegment(
             12: segments = 7'b100_1110;
             13: segments = 7'b011_1101;
             14: segments = 7'b100_1111;
-            15: segments = 7'b110_0111;
+            15: segments = 7'b100_0111;
             default: segments = 7'bxxx_xxxx;
         endcase
 endmodule

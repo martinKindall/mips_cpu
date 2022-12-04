@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 
 module DMem(
     input logic clk, we,

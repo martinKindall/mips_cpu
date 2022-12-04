@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 
 module IMem(
     input logic [5:0] a,

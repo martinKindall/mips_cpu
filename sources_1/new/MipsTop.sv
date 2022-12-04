@@ -1,10 +1,10 @@
+`timescale 1ns / 1ps
 
 module MipsTop(
-    input logic clk, reset
+    input logic clk, reset,
+    output logic [31:0] writedata, dataadr,
+    output logic memwrite
 );
-
-    logic [31:0] writedata, dataadr;
-    logic memwrite;
 
     logic [31:0] pc, instr, readdata;
 

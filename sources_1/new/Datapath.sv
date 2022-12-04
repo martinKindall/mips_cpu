@@ -9,7 +9,7 @@ module Datapath(
     output logic zero,
     output logic [31:0] pc,
     input logic [31:0] instr,
-    output logic [31:0] aluout, witedata,
+    output logic [31:0] aluout, writedata,
     input logic [31:0] readdata);
     
     logic [4:0] writereg;

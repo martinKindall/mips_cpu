@@ -8,7 +8,8 @@ module IMem(
     logic [31:0] ROM[63:0];  // 64 words
 
     initial
-        $readmemh("memfile.dat", ROM);
+        $readmemh("twoPlusTwo.dat", ROM);
+        //$readmemh("memfile.dat", ROM);
 
     assign rd = ROM[a];
 

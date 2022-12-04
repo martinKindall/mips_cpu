@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 
-module Mips_TB();
+module Mips_2plus2_TB();
 
     logic clk, reset;
 
-    logic [31:0] writedata, dataadr, instr;
+    logic [31:0] rd2, aluout, instr;
     logic memwrite;
 
-    MipsTop dut(clk, reset, writedata, dataadr, instr, memwrite);
+    MipsTop dut(clk, reset, rd2, aluout, instr, memwrite);
 
     initial
         begin
@@ -22,11 +22,11 @@ module Mips_TB();
 
     always @(negedge clk)
         begin
-            if (memwrite) begin
-                if (dataadr === 84 & writedata === 7) begin 
+            if (instr[5:0] === 8'h20) begin   // we are in the add instruction
+                if (aluout === 5 & rd2 === 3 & memwrite === 0) begin 
                     $display("Simulation succeeded");
                     $stop;
-                end else if (dataadr !== 80) begin
+                end else begin
                     $display("Simulation failed");
                     $stop;
                 end

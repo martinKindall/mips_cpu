@@ -22,8 +22,8 @@ module Mips_2plus2_TB();
 
     always @(negedge clk)
         begin
-            if (instr[5:0] === 8'h20) begin   // we are in the add instruction
-                if (aluout === 5 & rd2 === 3 & memwrite === 0) begin 
+            if (memwrite === 1) begin   // we are in the sw instruction
+                if (aluout === 68 & rd2 === 5) begin 
                     $display("Simulation succeeded");
                     $stop;
                 end else begin

@@ -2,6 +2,12 @@
 set_property PACKAGE_PIN W15 [get_ports selector]
 set_property IOSTANDARD LVCMOS33 [get_ports selector]
 
+#set_property PACKAGE_PIN T1 [get_ports manualClk]
+#set_property IOSTANDARD LVCMOS33 [get_ports manualClk]
+
+set_property PACKAGE_PIN W16 [get_ports reset]
+set_property IOSTANDARD LVCMOS33 [get_ports reset]
+
 #set_property PACKAGE_PIN V16 [get_ports we3]
 #set_property IOSTANDARD LVCMOS33 [get_ports we3]
 
@@ -62,3 +68,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports {led_segment[0]}]
 
 set_property PACKAGE_PIN V7 [get_ports dp]
 set_property IOSTANDARD LVCMOS33 [get_ports dp]
+
+# leds
+
+set_property PACKAGE_PIN U16 [get_ports memwrite]
+set_property IOSTANDARD LVCMOS33 [get_ports memwrite]

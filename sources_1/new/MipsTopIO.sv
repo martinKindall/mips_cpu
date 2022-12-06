@@ -2,21 +2,22 @@
 module MipsTopIO(
     input logic clk,
     input logic reset,
+    input logic clkEnable,
     input logic [1:0] btns,
     input logic selector,
     output logic [6:0] led_segment,
     output logic [3:0] anode_activate,
     output logic dp,
-    output logic memwrite);
+    output logic memwrite,
+    output logic slow_clk);
 
-    logic slow_clk;
     logic [31:0] displayedReg;
     logic [31:0] rd2;
     logic [31:0] aluout;
     logic [31:0] instr;
     logic [15:0] displayed_number;
 
-    SlowClock slowClock(clk, slow_clk);
+    SlowClock slowClock(clk, clkEnable, slow_clk);
 
     MipsTop mips(slow_clk, reset, rd2, aluout, instr, memwrite);
 

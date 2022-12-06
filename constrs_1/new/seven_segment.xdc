@@ -2,6 +2,9 @@
 set_property PACKAGE_PIN W15 [get_ports selector]
 set_property IOSTANDARD LVCMOS33 [get_ports selector]
 
+set_property PACKAGE_PIN V15 [get_ports clkEnable]
+set_property IOSTANDARD LVCMOS33 [get_ports clkEnable]
+
 #set_property PACKAGE_PIN T1 [get_ports manualClk]
 #set_property IOSTANDARD LVCMOS33 [get_ports manualClk]
 
@@ -73,3 +76,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports dp]
 
 set_property PACKAGE_PIN U16 [get_ports memwrite]
 set_property IOSTANDARD LVCMOS33 [get_ports memwrite]
+
+set_property PACKAGE_PIN U19 [get_ports slow_clk]
+set_property IOSTANDARD LVCMOS33 [get_ports slow_clk]

@@ -3,6 +3,7 @@
 // counts 1 second
 module SlowClock(
     input logic clk_in,
+    input logic enable,
     output logic clk_out);
     
     logic [25:0] counter = 0;
@@ -13,7 +14,7 @@ module SlowClock(
         if (counter == 50_000_000 - 1)
           begin
             counter <= 0;
-            state <= ~state;
+            if (enable) state <= ~state;
           end
     end
     

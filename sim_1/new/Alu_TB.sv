@@ -31,6 +31,7 @@ module Alu_TB;
             if ({aluout, zero} !== {aluoutTest, zeroTest}) begin
                 $display("Error: output = %b (%b expected)", {aluout, zero}, {aluoutTest, zeroTest});
                 $display("vectornum %b", vectornum);
+                errors = errors + 1;
             end
             vectornum = vectornum + 1;
             if (testvectors[vectornum] === 'x) begin 
